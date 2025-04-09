@@ -100,25 +100,64 @@
         }
         
         .join-btn {
-            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            background: linear-gradient(135deg, #ff6b6b, #ff4757);
             color: white;
             border: none;
-            padding: 12px 25px;
-            border-radius: 50px;
+            padding: 14px 30px;
+            border-radius: 8px;
             cursor: pointer;
             font-weight: bold;
-            font-size: 1rem;
+            font-size: 1.1rem;
             transition: all 0.3s ease;
             width: 100%;
             letter-spacing: 0.5px;
             text-transform: uppercase;
             text-decoration: none;
             display: block;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+            margin-top: 15px;
         }
         
         .join-btn:hover {
-            background: linear-gradient(to right, #ff6348, #ff4757);
-            box-shadow: 0 4px 12px rgba(255, 71, 87, 0.3);
+            background: linear-gradient(135deg, #ff4757, #ff6b6b);
+            box-shadow: 0 6px 20px rgba(255, 71, 87, 0.6);
+            transform: translateY(-2px);
+        }
+        
+        .join-btn:active {
+            transform: translateY(0);
+        }
+        
+        .join-btn::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -60%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255,255,255,0.2);
+            transform: rotate(30deg);
+            transition: all 0.3s;
+        }
+        
+        .join-btn:hover::after {
+            left: 100%;
+        }
+        
+        .district-notice {
+            background: linear-gradient(135deg, #4b6cb7, #182848);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            margin: 1rem auto;
+            max-width: 1200px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-left: 5px solid #ff4757;
         }
         
         .age-gate {
@@ -211,6 +250,25 @@
             animation: pulse 2s infinite;
         }
         
+        .data-notice {
+            background-color: #e3f2fd;
+            color: #1976d2;
+            padding: 0.8rem;
+            border-radius: 6px;
+            margin: 0.5rem auto;
+            font-size: 0.9rem;
+            text-align: center;
+            border-left: 4px solid #1976d2;
+            max-width: 1200px;
+        }
+        
+        .login-notice {
+            color: #ff4757;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+        
         @keyframes pulse {
             0% { opacity: 1; }
             50% { opacity: 0.8; }
@@ -265,6 +323,11 @@
                 width: 100%;
                 margin: 10px 0;
             }
+            
+            .district-notice {
+                font-size: 1rem;
+                padding: 0.8rem;
+            }
         }
     </style>
 </head>
@@ -283,12 +346,20 @@
     <!-- মূল কন্টেন্ট -->
     <div class="header">
         <h1>প্রিমিয়াম অ্যাডাল্ট কমিউনিটি</h1>
-        <p>শুধুম���ত্র ভেরিফাইড প্রাপ্তবয়স্ক সদস্যদের জন্য</p>
+        <p>শুধুমাত্র ভেরিফাইড প্রাপ্তবয়স্ক সদস্যদের জন্য</p>
     </div>
 
     <div class="warning">
         <span class="warning-icon">⚠️</span>
         <span>এই সাইটের কন্টেন্ট শুধুমাত্র প্রাপ্তবয়স্কদের জন্য। ১৮ বছরের কম বয়সীদের প্রবেশ নিষিদ্ধ।</span>
+    </div>
+
+    <div class="data-notice">
+        ⚠️ WiFi নেটওয়ার্কে জয়েন করা সম্ভব নয়। মোবাইল ডাটা ব্যবহার করুন।
+    </div>
+
+    <div class="district-notice">
+        এখানে ৬৪ জেলার মেয়েরা আছে ভিডিও কলে কথা বলার জন্য
     </div>
 
     <div class="profile-container">
@@ -300,6 +371,7 @@
             <div class="profile-info">
                 <h3>তানিয়া</h3>
                 <p>২৫ বছর, ঢাকা</p>
+                <div class="login-notice">কোনো সাইড এ নিয়ে গেলে লগিং করে আবার চেষ্টা করুন</div>
                 <a href="https://geometrydoomeddrone.com/jv3e105eq?key=12a77d608d36577c68418db5cb428bf5" class="join-btn">জয়েন প্রিমিয়াম গ্রুপ</a>
             </div>
         </div>
@@ -312,6 +384,7 @@
             <div class="profile-info">
                 <h3>প্রিয়া</h3>
                 <p>২২ বছর, চট্টগ্রাম</p>
+                <div class="login-notice">কোনো সাইড এ নিয়ে গেলে লগিং করে আবার চেষ্টা করুন</div>
                 <a href="https://geometrydoomeddrone.com/jv3e105eq?key=12a77d608d36577c68418db5cb428bf5" class="join-btn">জয়েন প্রিমিয়াম গ্রুপ</a>
             </div>
         </div>
@@ -324,6 +397,7 @@
             <div class="profile-info">
                 <h3>মিতু</h3>
                 <p>২৭ বছর, সিলেট</p>
+                <div class="login-notice">কোনো সাইড এ নিয়ে গেলে লগিং করে আবার চেষ্টা করুন</div>
                 <a href="https://geometrydoomeddrone.com/jv3e105eq?key=12a77d608d36577c68418db5cb428bf5" class="join-btn">জয়েন প্রিমিয়াম গ্রুপ</a>
             </div>
         </div>
@@ -336,6 +410,7 @@
             <div class="profile-info">
                 <h3>নাবিলা</h3>
                 <p>২৩ বছর, রাজশাহী</p>
+                <div class="login-notice">কোনো সাইড এ নিয়ে গেলে লগিং করে আবার চেষ্টা করুন</div>
                 <a href="https://geometrydoomeddrone.com/jv3e105eq?key=12a77d608d36577c68418db5cb428bf5" class="join-btn">জয়েন প্রিমিয়াম গ্রুপ</a>
             </div>
         </div>
@@ -348,6 +423,7 @@
             <div class="profile-info">
                 <h3>জারা</h3>
                 <p>২৪ বছর, খুলনা</p>
+                <div class="login-notice">কোনো সাইড এ নিয়ে গেলে লগিং করে আবার চেষ্টা করুন</div>
                 <a href="https://geometrydoomeddrone.com/jv3e105eq?key=12a77d608d36577c68418db5cb428bf5" class="join-btn">জয়েন প্রিমিয়াম গ্রুপ</a>
             </div>
         </div>
@@ -360,6 +436,7 @@
             <div class="profile-info">
                 <h3>তিশা</h3>
                 <p>২১ বছর, বরিশাল</p>
+                <div class="login-notice">কোনো সাইড এ নিয়ে গেলে লগিং করে আবার চেষ্টা করুন</div>
                 <a href="https://geometrydoomeddrone.com/jv3e105eq?key=12a77d608d36577c68418db5cb428bf5" class="join-btn">জয়েন প্রিমিয়াম গ্রুপ</a>
             </div>
         </div>
@@ -372,6 +449,7 @@
             <div class="profile-info">
                 <h3>মিম</h3>
                 <p>২৬ বছর, রংপুর</p>
+                <div class="login-notice">কোনো সাইড এ নিয়ে গেলে লগিং করে আবার চেষ্টা করুন</div>
                 <a href="https://geometrydoomeddrone.com/jv3e105eq?key=12a77d608d36577c68418db5cb428bf5" class="join-btn">জয়েন প্রিমিয়াম গ্রুপ</a>
             </div>
         </div>
@@ -384,6 +462,7 @@
             <div class="profile-info">
                 <h3>নাজিয়া</h3>
                 <p>২৫ বছর, কুমিল্লা</p>
+                <div class="login-notice">কোনো সাইড এ নিয়ে গেলে লগিং করে আবার চেষ্টা করুন</div>
                 <a href="https://geometrydoomeddrone.com/jv3e105eq?key=12a77d608d36577c68418db5cb428bf5" class="join-btn">জয়েন প্রিমিয়াম গ্রুপ</a>
             </div>
         </div>
@@ -424,4 +503,4 @@
         };
     </script>
 </body>
-                  </html>
+                                                                                        </html>
